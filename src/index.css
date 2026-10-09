@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-family-display, 'Sora', sans-serif);
+  --font-body: var(--font-family-body, 'Hanken Grotesk', sans-serif);
+  --font-mono: var(--font-family-mono, 'JetBrains Mono', monospace);
+}
+
+:root {
+  /* Default: Cyber-Vitality Dark */
+  --bg-app: #0a0e17;
+  --bg-card: #121824;
+  --bg-card-hover: #161e2f;
+  --text-main: #dee2f3;
+  --text-muted: #849495;
+  --color-primary: #00f0ff; /* Electric Cyan */
+  --color-secondary: #ff00ff; /* Magenta */
+  --border-card: rgba(0, 240, 255, 0.15);
+  --border-card-hover: rgba(0, 240, 255, 0.4);
+  --font-family-display: 'Sora', sans-serif;
+  --font-family-body: 'Hanken Grotesk', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+  --radius-card: 8px;
+  --radius-element: 4px;
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  --shadow-hover: 0 0 20px rgba(0, 240, 255, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  --border-size: 1px;
+}
+
+/* Cyber-Vitality Dark */
+.dark.theme-cyber-vitality {
+  --bg-app: #0a0e17;
+  --bg-card: #121824;
+  --bg-card-hover: #161e2f;
+  --text-main: #dee2f3;
+  --text-muted: #849495;
+  --color-primary: #00f0ff; /* Electric Cyan */
+  --color-secondary: #ff00ff; /* Magenta */
+  --border-card: rgba(0, 240, 255, 0.15);
+  --border-card-hover: rgba(0, 240, 255, 0.4);
+  --font-family-display: 'Sora', sans-serif;
+  --font-family-body: 'Hanken Grotesk', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+  --radius-card: 8px;
+  --radius-element: 4px;
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  --shadow-hover: 0 0 20px rgba(0, 240, 255, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  --border-size: 1px;
+}
+
+/* Cyber-Vitality Light */
+.light.theme-cyber-vitality {
+  --bg-app: #f0f4f8;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --color-primary: #00a3b8; /* Rich Cyan */
+  --color-secondary: #d900d9; /* Deep Magenta */
+  --border-card: rgba(0, 163, 184, 0.15);
+  --border-card-hover: rgba(0, 163, 184, 0.4);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 4px 20px rgba(0, 163, 184, 0.15);
+  --radius-card: 8px;
+  --radius-element: 4px;
+  --border-size: 1px;
+  --font-family-display: 'Sora', sans-serif;
+  --font-family-body: 'Hanken Grotesk', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+}
+
+/* Bauhaus Neo-Brutalist Dark */
+.dark.theme-bauhaus {
+  --bg-app: #111111;
+  --bg-card: #1c1c1c;
+  --bg-card-hover: #262626;
+  --text-main: #f5f0e8;
+  --text-muted: #a3a3a3;
+  --color-primary: #ffcc00; /* Accent Yellow */
+  --color-secondary: #e63b2e; /* Accent Red */
+  --border-card: #333333;
+  --border-card-hover: #ffcc00;
+  --font-family-display: 'Space Grotesk', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+  --radius-card: 0px;
+  --radius-element: 0px;
+  --border-size: 2px;
+  --shadow-card: 4px 4px 0px #000000;
+  --shadow-hover: 6px 6px 0px #ffcc00;
+}
+
+/* Bauhaus Neo-Brutalist Light */
+.light.theme-bauhaus {
+  --bg-app: #f5f0e8; /* Aged paper */
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfbfa;
+  --text-main: #1a1a1a;
+  --text-muted: #555555;
+  --color-primary: #ffcc00; /* Accent Yellow */
+  --color-secondary: #e63b2e; /* Accent Red */
+  --border-card: #1a1a1a;
+  --border-card-hover: #1a1a1a;
+  --font-family-display: 'Space Grotesk', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+  --radius-card: 0px;
+  --radius-element: 0px;
+  --border-size: 2px;
+  --shadow-card: 4px 4px 0px #1a1a1a;
+  --shadow-hover: 6px 6px 0px #ffcc00;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-card);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Glowing text and drop-shadows */
+.neon-glow {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.neon-glow-secondary {
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.6), 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+/* Card classes with variables mapping */
+.custom-card {
+  background-color: var(--bg-card);
+  border: var(--border-size) solid var(--border-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-card-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Button with variable mapping */
+.custom-button-primary {
+  background-color: var(--color-primary);
+  color: #000000;
+  border-radius: var(--radius-element);
+  border: var(--border-size) solid var(--border-card-hover);
+  font-family: var(--font-display);
+  font-weight: 600;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease;
+}
+
+.custom-button-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.custom-button-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: var(--border-size) solid var(--border-card);
+  border-radius: var(--radius-element);
+  font-family: var(--font-display);
+  transition: all 0.2s ease;
+}
+
+.custom-button-secondary:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(0, 240, 255, 0.05);
+}
+
+/* Progress bar styles */
+.progress-bar-fill {
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,22 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+# Runtime data and backups
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite-*
+data/
+*.zip
+deploy.log
+release/
+walkthrough.md
+task.md
+implementation_plan.md

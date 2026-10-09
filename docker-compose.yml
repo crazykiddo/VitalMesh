@@ -1,0 +1,31 @@
+services:
+  vitalmesh:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_VERSION: ${APP_VERSION:-dev}
+    image: vitalmesh:${APP_VERSION:-latest}
+    container_name: vitalmesh
+    restart: unless-stopped
+    ports:
+      - "3007:3007"
+    environment:
+      NODE_ENV: production
+      PORT: 3007
+      APP_VERSION: ${APP_VERSION:-dev}
+    volumes:
+      - vitalmesh-data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+      # For the remote vps Docker context, the container also needs that 
+      # context's Docker configuration and SSH credentials. 
+      # A typical additional Compose mount would be:
+      - ${USERPROFILE}/.docker:/root/.docker:ro
+      - ${USERPROFILE}/.ssh:/root/.ssh:ro
+      # That last portion depends on where the vps Docker context
+      # and its SSH keys are stored.
+
+
+
+volumes:
+  vitalmesh-data:
